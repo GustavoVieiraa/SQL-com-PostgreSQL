@@ -1,0 +1,13 @@
+Nesta aula, aprendemos a criar um banco de dados no PostgreSQL de duas maneiras:
+
+Usando o pgAdmin:
+  Através da interface gráfica, clicando com o botão direito em "Databases", depois em "Create" e "Database".
+  Definimos o nome do banco, o proprietário (owner), o encoding e o limite de conexões.
+  A aba "SQL" mostra o comando SQL equivalente para a criação do banco.
+
+Usando o prompt de comando (SQL Shell - psql):
+  Utilizamos o comando CREATE DATABASE nome_do_banco; para criar um novo banco.
+  O comando \l lista todos os bancos de dados existentes.
+  Para apagar um banco de dados, usamos o comando DROP DATABASE nome_do_banco;.
+
+Além disso, vimos como visualizar os bancos de dados existentes no pgAdmin, atualizando a lista de bancos.
