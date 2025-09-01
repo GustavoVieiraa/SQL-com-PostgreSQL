@@ -1,0 +1,7 @@
+Nesta aula, aprendemos como criar uma tabela no PostgreSQL e quais tipos de dados podemos usar para definir os campos dessa tabela.
+
+Começamos explorando os tipos de dados numéricos como integer, real, serial e numeric, e também os tipos de texto como varchar(n), char(n) e text. Além disso, vimos os tipos boolean para valores verdadeiro/falso e os tipos date, time e timestamp para trabalhar com datas e horários.
+
+Em seguida, criamos uma tabela chamada "aluno" com campos como id, nome, cpf, observacao, idade, dinheiro, altura, ativo, data_nascimento, hora_aula e matriculado_em, utilizando os tipos de dados apropriados para cada campo.
+
+No final, executamos o código para criar a tabela no banco de dados e fizemos um teste rápido para verificar se a tabela foi criada corretamente.
