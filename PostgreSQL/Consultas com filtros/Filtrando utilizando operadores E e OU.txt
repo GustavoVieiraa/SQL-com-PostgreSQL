@@ -1,0 +1,24 @@
+Nesta aula, aprendemos a combinar filtros em consultas SQL utilizando os operadores AND e OR.
+
+  AND: Exige que todas as condições sejam verdadeiras para que um registro seja retornado. É como uma conjunção, onde ambas as partes devem ser verdadeiras.
+  OR: Requer que pelo menos uma das condições seja verdadeira para que um registro seja retornado. É como uma disjunção, onde basta que uma das partes seja verdadeira.
+
+Vimos exemplos práticos de como usar esses operadores para filtrar dados de alunos com base em diferentes critérios, como nome e CPF. Também exploramos as tabelas verdade para entender melhor como AND e OR funcionam em termos lógicos.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno
+	WHERE nome LIKE 'S%'
+	AND idade IS NOT NULL;  
+
+SELECT *
+	FROM aluno
+	WHERE idade > 20
+	AND dinheiro < 1000;
+
+SELECT *
+	FROM aluno
+	WHERE nome LIKE 'Gustavo'
+	OR nome LIKE 'Sophya'
+	AND idade > 19;
