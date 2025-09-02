@@ -1,0 +1,64 @@
+Nesta aula, aprendemos sobre chaves estrangeiras (FOREIGN KEY) em bancos de dados PostgreSQL.
+
+O que são: Chaves estrangeiras são restrições que garantem que os valores em uma coluna (ou colunas) correspondam a valores em outra tabela.
+
+Na prática:
+  Criamos uma tabela chamada "aluno_curso" para relacionar alunos e cursos.
+  Essa tabela possui chaves estrangeiras que apontam para as tabelas "aluno" e "curso", garantindo que apenas IDs de alunos e cursos existentes sejam utilizados.
+  Tentamos inserir dados inconsistentes (aluno ou curso com ID inexistente) e vimos que a chave estrangeira impede a operação, evitando inconsistências no banco de dados.
+
+Em resumo, as chaves estrangeiras são importantes para manter a integridade e a consistência dos dados em um banco de dados relacional.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno;
+
+SELECT *
+	FROM curso;
+
+CREATE TABLE aluno (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL
+);
+
+INSERT INTO aluno (nome) VALUES ('Gustavo');
+INSERT INTO aluno (nome) VALUES ('Sophya');
+INSERT INTO aluno (nome) VALUES ('Danilo');
+INSERT INTO aluno (nome) VALUES ('Vinícius');
+INSERT INTO aluno (nome) VALUES ('Aurora');
+INSERT INTO aluno (nome) VALUES ('Diogo');
+
+DROP TABLE aluno_curso;
+
+CREATE TABLE aluno_curso (
+	aluno_id INTEGER,
+	curso_id INTEGER,
+	PRIMARY KEY (aluno_id, curso_id),
+	
+	FOREIGN KEY (aluno_id)
+	REFERENCES aluno (id),
+
+	FOREIGN KEY (curso_id)
+	REFERENCES curso (id)
+);
+
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1, 1);
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (2, 1);
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (3, 1);
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (9, 1);
+
+SELECT * FROM  aluno WHERE id = 1;
+SELECT * FROM curso WHERE id = 1;
+
+SELECT * FROM  aluno WHERE id = 2;
+SELECT * FROM curso WHERE id = 1;
+
+SELECT * FROM  aluno WHERE id = 3;
+SELECT * FROM curso WHERE id = 1;
+
+SELECT * FROM  aluno WHERE id = 9;
+SELECT * FROM curso WHERE id = 1;
+
+SELECT *
+	FROM aluno_curso;
