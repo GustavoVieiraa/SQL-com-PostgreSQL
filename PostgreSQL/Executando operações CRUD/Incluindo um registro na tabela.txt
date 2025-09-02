@@ -1,0 +1,28 @@
+Nesta aula, aprendemos como inserir dados em uma tabela PostgreSQL utilizando o comando INSERT INTO.
+
+Principais pontos abordados:
+
+Sintaxe do INSERT:
+  INSERT INTO nome_da_tabela (coluna1, coluna2, ...) VALUES (valor1, valor2, ...);
+
+Exemplos:
+  Inserir dados especificando colunas e valores.
+  Inserir todos os valores na ordem das colunas (menos comum).
+
+Tipos de dados:
+  TEXT: Strings devem estar entre aspas simples ('...').
+  CHAR: Similar a TEXT, mas com tamanho fixo.
+  INT: Números inteiros não precisam de aspas.
+  NUMERIC: Números decimais usam ponto (.) como separador.
+  REAL: Números de ponto flutuante.
+  BOOLEAN: Valores TRUE, FALSE ou NULL.
+  DATE: Formato YYYY-MM-DD.
+  TIME: Formato HH24:MI:SS.
+  TIMESTAMP: Formato YYYY-MM-DD HH24:MI:SS.
+
+Comandos SQL praticados na aula:
+
+INSERT INTO aluno (nome, cpf, observacao, idade, dinheiro, altura, ativo, data_nascimento, hora_aula, matriculado_em)
+VALUES ('Gustavo', '12345678900', 'Esse é o primeiro aluno da minha escola', 22, 12952.32, 1.75, TRUE, '2003-02-24', '19:30:00', '2025-09-01 22:49:00');
+
+SELECT * FROM aluno;
