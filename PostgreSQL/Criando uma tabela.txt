@@ -5,3 +5,21 @@ Começamos explorando os tipos de dados numéricos como integer, real, serial e 
 Em seguida, criamos uma tabela chamada "aluno" com campos como id, nome, cpf, observacao, idade, dinheiro, altura, ativo, data_nascimento, hora_aula e matriculado_em, utilizando os tipos de dados apropriados para cada campo.
 
 No final, executamos o código para criar a tabela no banco de dados e fizemos um teste rápido para verificar se a tabela foi criada corretamente.
+
+Types mais utilizados no PostgreSQL:
+
+integer
+real
+serial
+numeric
+
+varchar(n)
+char(n)
+text
+
+boolean
+
+date
+time
+timestamp
+
