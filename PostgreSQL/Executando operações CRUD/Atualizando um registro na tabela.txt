@@ -1,0 +1,26 @@
+Nesta aula, aprendemos como alterar dados em uma tabela no PostgreSQL utilizando o comando UPDATE.
+
+Primeiro, o instrutor explica a sintaxe do comando UPDATE com base na documentação do PostgreSQL. Em seguida, demonstra como aplicá-lo em uma tabela, utilizando o WHERE para filtrar os dados a serem alterados e evitando modificações indesejadas em outros registros.
+
+Foi apresentado um exemplo prático onde todos os campos de um registro na tabela "aluno" são modificados para demonstrar a sintaxe completa do comando UPDATE.
+
+Por fim, o instrutor reforça a importância de utilizar o = ao atribuir um novo valor aos campos e mostra como verificar se a atualização foi realizada com sucesso através do comando SELECT.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno
+	WHERE id = 1;
+
+UPDATE aluno
+	SET nome = 'Alvaro', 
+	cpf = '10987654321', 
+	observacao = 'Teste de UPDATE', 
+	idade = 44, 
+	dinheiro = 32.02, 
+	altura = 1.83, 
+	ativo = FALSE, 
+	data_nascimento = '1979-09-29', 
+	hora_aula = '21:00:00', 
+	matriculado_em = '2025-01-01 12:00:00'
+WHERE id = 1;
