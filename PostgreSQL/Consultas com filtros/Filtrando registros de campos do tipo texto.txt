@@ -1,0 +1,46 @@
+Nesta aula, aprendemos a usar filtros em campos de texto no PostgreSQL.
+
+Começamos inserindo novos dados na tabela "aluno" para ter mais registros para trabalhar. Em seguida, exploramos os seguintes filtros:
+
+= (igual): para pesquisar um texto específico.
+
+<> ou != (diferente): para buscar dados que não correspondem a um valor específico.
+
+LIKE: para encontrar textos "parecidos com" um padrão, utilizando os operadores especiais:
+  _ (underline): substitui um único caractere em uma posição específica.
+  % (porcentagem): substitui múltiplos caracteres no começo, no final ou entre o texto.
+
+NOT LIKE: para encontrar textos que não correspondem a um padrão.
+
+Além disso, vimos como combinar esses filtros para criar consultas mais complexas e como usar os caracteres curinga _ e % para flexibilizar a busca por padrões.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno
+	WHERE nome <> 'Gustavo';
+
+SELECT *
+	FROM aluno
+	WHERE nome != 'Gustavo';
+
+SELECT *
+	FROM aluno
+	WHERE nome = 'Gustavo';
+
+SELECT *
+	FROM aluno
+	WHERE nome LIKE '_ustavo';
+
+SELECT *
+	FROM aluno
+	WHERE nome NOT LIKE '_ustavo';
+
+
+SELECT *
+	FROM aluno
+	WHERE nome LIKE 'S%';
+
+SELECT *
+	FROM aluno
+	WHERE nome LIKE '% %';
