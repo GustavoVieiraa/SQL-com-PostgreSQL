@@ -1,0 +1,38 @@
+Nesta aula, aprendemos sobre as chaves primárias em tabelas de banco de dados.
+
+Primeiro, criamos uma tabela de cursos e mostramos que, inicialmente, ela permitia a inserção de valores nulos e duplicados no campo "id".
+
+Para evitar isso, adicionamos restrições:
+
+  NOT NULL para garantir que os campos "id" e "nome" não possam ser vazios.
+  UNIQUE para garantir que cada "id" seja único.
+
+Em seguida, mostramos que a combinação de NOT NULL e UNIQUE no campo "id" tem as mesmas características de uma chave primária, e substituímos esses comandos por PRIMARY KEY.
+
+Com isso, garantimos que o campo "id" não possa ser nulo e seja único, identificando cada curso de forma exclusiva.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno;
+
+DROP TABLE curso;
+
+CREATE TABLE curso (
+	id INTEGER NOT NULL UNIQUE,
+	nome VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE curso (
+	id INTEGER PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL
+);
+
+INSERT INTO curso (id, nome) VALUES (NULL, NULL);
+INSERT INTO curso (id, nome) VALUES (1, NULL);
+INSERT INTO curso (id, nome) VALUES (NULL, 'JavaScript');
+INSERT INTO curso (id, nome) VALUES (1, 'HTML');
+INSERT INTO curso (id, nome) VALUES (2, 'JavaScript');
+
+SELECT *
+	FROM curso;
