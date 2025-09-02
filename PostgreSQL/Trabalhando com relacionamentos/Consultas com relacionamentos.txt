@@ -1,0 +1,21 @@
+Nesta aula, aprendemos como combinar dados de diferentes tabelas em uma única consulta usando o comando JOIN no PostgreSQL.
+
+Junção de Tabelas: O JOIN permite unir informações de duas ou mais tabelas, facilitando a visualização de dados relacionados.
+
+Sintaxe Básica: Usamos JOIN tabelaB ON tabelaB.chave_estrangeira = tabelaA.chave_primaria para especificar como as tabelas estão relacionadas.
+
+Múltiplos JOINs: Podemos adicionar várias tabelas à consulta usando múltiplos comandos JOIN.
+
+Alias: É possível usar alias (apelidos) para renomear as colunas na consulta, tornando os resultados mais claros e organizados. Por exemplo: aluno.nome AS "Nome do Aluno".
+
+Em resumo, o JOIN é essencial para criar queries que exibem dados relacionados de várias tabelas, e os alias ajudam a organizar e nomear as colunas de forma mais intuitiva.
+
+Comandos SQL utilizados na aula:
+
+SELECT aluno.nome AS aluno_nome,
+	   curso.nome AS curso_nome
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	JOIN curso 		 ON curso.id 			 = aluno_curso.curso_id;
+
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES (1, 2);
