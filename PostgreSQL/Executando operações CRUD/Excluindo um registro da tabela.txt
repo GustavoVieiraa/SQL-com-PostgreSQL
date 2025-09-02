@@ -1,0 +1,15 @@
+Nesta aula, aprendemos como excluir dados de uma tabela no PostgreSQL utilizando o comando DELETE.
+
+Foi explicado que é crucial utilizar filtros com a cláusula WHERE para evitar a exclusão de registros incorretos. Antes de executar o DELETE, é recomendado usar o SELECT com o mesmo filtro para confirmar se o registro a ser excluído é o correto.
+
+Além disso, foi alertado sobre o perigo de usar DELETE FROM nome_da_tabela sem um filtro, pois isso apagaria todos os registros da tabela.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno
+	WHERE nome = 'Alvaro';
+
+DELETE 
+	FROM aluno
+	WHERE nome = 'Alvaro';
