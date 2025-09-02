@@ -1,0 +1,55 @@
+Nesta aula, aprendemos a usar filtros em campos numéricos, de data e booleanos no PostgreSQL.
+
+Começamos com os comandos IS e IS NOT, que são usados para filtrar valores nulos (NULL). Vimos que WHERE cpf IS NULL retorna todos os registros com CPF não preenchido, enquanto WHERE cpf IS NOT NULL retorna os registros com CPF preenchido.
+
+Em seguida, exploramos os operadores de comparação, como =, <>, >=, <=, > e <. Entendemos que eles funcionam para campos INTEGER, REAL, SERIAL, NUMERIC, DATE, TIME e TIMESTAMP.
+
+Também aprendemos sobre o operador BETWEEN, que permite buscar resultados dentro de um intervalo de valores.
+
+Por fim, vimos que o campo BOOLEAN usa apenas os filtros = e <>, e que para encontrar valores nulos nesse tipo de campo, usamos o comando IS NULL.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+	FROM aluno
+	WHERE cpf IS NOT NULL;
+
+SELECT *
+	FROM aluno
+	WHERE cpf IS NULL;
+
+SELECT *
+	FROM aluno
+	WHERE idade = 22;
+
+SELECT *
+	FROM aluno
+	WHERE idade <> 22;
+
+SELECT *
+	FROM aluno
+	WHERE idade >= 22;
+
+SELECT *
+	FROM aluno
+	WHERE idade <= 22;
+
+SELECT *
+	FROM aluno
+	WHERE idade > 22;
+
+SELECT *
+	FROM aluno
+	WHERE idade < 22;
+
+SELECT *
+	FROM aluno
+	WHERE idade BETWEEN 1 AND 22;
+
+SELECT *
+	FROM aluno
+	WHERE ativo = true;
+
+SELECT *
+	FROM aluno
+	WHERE ativo = false;
