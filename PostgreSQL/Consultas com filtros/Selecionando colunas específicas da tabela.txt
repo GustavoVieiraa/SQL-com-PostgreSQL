@@ -1,0 +1,9 @@
+Nesta aula, aprendemos a selecionar colunas específicas de uma tabela no PostgreSQL e como usar o comando AS para criar alias (apelidos) para os nomes das colunas, o que é útil para melhorar a apresentação dos dados, especialmente em relatórios.
+
+Comandos SQL utilizados na aula:
+
+SELECT nome AS "Nome do aluno",
+	   cpf AS "CPF do aluno",
+	   idade AS "Idade do aluno",
+	   matriculado_em AS data_da_matricula
+	FROM aluno;
