@@ -1,0 +1,44 @@
+Nesta aula, aprendemos sobre diferentes tipos de JOINs em SQL, que são usados para combinar dados de duas ou mais tabelas.
+
+JOIN: Retorna apenas os registros que têm correspondência em ambas as tabelas.
+
+LEFT JOIN: Retorna todos os registros da tabela da esquerda e os registros correspondentes da tabela da direita. Se não houver correspondência na tabela da direita, os campos serão preenchidos com NULL.
+
+RIGHT JOIN: Retorna todos os registros da tabela da direita e os registros correspondentes da tabela da esquerda. Se não houver correspondência na tabela da esquerda, os campos serão preenchidos com NULL.
+
+FULL JOIN: Retorna todos os registros de ambas as tabelas. Se não houver correspondência em uma das tabelas, os campos serão preenchidos com NULL.
+
+CROSS JOIN: Retorna o produto cartesiano de ambas as tabelas, combinando cada linha da primeira tabela com cada linha da segunda tabela.
+
+Comandos SQL utilizados na aula:
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	JOIN curso       ON curso.id             = aluno_curso.curso_id;
+
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	LEFT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	LEFT JOIN curso       ON curso.id             = aluno_curso.curso_id;
+
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	RIGHT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	RIGHT JOIN curso       ON curso.id             = aluno_curso.curso_id;
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	FULL JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	FULL JOIN curso       ON curso.id             = aluno_curso.curso_id;
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	CROSS JOIN curso;
