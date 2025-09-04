@@ -1,0 +1,33 @@
+Nesta aula, aprendemos sobre a restrição de chave estrangeira ON DELETE CASCADE no PostgreSQL.
+
+Inicialmente, foi demonstrado o problema de tentar excluir um registro de uma tabela (aluno) que está referenciado em outra tabela (aluno_curso) sem a restrição adequada, resultando em um erro.
+
+Para solucionar isso, a aula explica como alterar a definição da chave estrangeira na tabela aluno_curso para incluir a opção ON DELETE CASCADE. Isso garante que, ao excluir um registro na tabela aluno, todas as referências a esse registro na tabela aluno_curso também sejam automaticamente excluídas.
+
+Em resumo, o ON DELETE CASCADE facilita a manutenção da integridade do banco de dados, automatizando a exclusão de registros relacionados em outras tabelas quando um registro é removido da tabela principal.
+
+Comandos SQL utilizados na aula:
+
+DELETE FROM aluno WHERE id = 1;
+
+DROP TABLE aluno_curso;
+CREATE TABLE aluno_curso (
+	aluno_id INTEGER,
+	curso_id INTEGER,
+	PRIMARY KEY (aluno_id, curso_id),
+	
+	FOREIGN KEY (aluno_id)
+	REFERENCES aluno (id)
+	ON DELETE CASCADE,
+
+	FOREIGN KEY (aluno_id)
+	REFERENCES curso (id)
+);
+
+SELECT * FROM aluno_curso;
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	JOIN curso       ON curso.id             = aluno_curso.curso_id;
