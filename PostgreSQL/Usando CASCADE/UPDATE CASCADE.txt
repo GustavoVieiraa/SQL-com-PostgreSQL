@@ -1,0 +1,39 @@
+Nesta aula, aprendemos sobre a função UPDATE CASCADE no PostgreSQL.
+
+Inicialmente, tentamos atualizar o ID de um aluno na tabela "aluno", mas recebemos uma mensagem de erro porque a tabela está relacionada a outros bancos de dados. Para resolver isso, usamos o código UPDATE CASCADE ao criar a tabela "aluno_curso".
+
+Com UPDATE CASCADE, quando alteramos um dado na tabela "aluno", a mudança também se reflete automaticamente em todos os bancos de dados relacionados, como "aluno_curso". Fizemos um teste prático atualizando o ID de um aluno e verificamos que a alteração foi propagada para a tabela "aluno_curso".
+
+Em resumo, UPDATE CASCADE garante que as atualizações em uma tabela se propaguem para as tabelas relacionadas, mantendo a consistência dos dados em todo o banco de dados.
+
+Comandos SQL utilizados na aula:
+
+DROP TABLE aluno_curso;
+
+CREATE TABLE aluno_curso (
+	aluno_id INTEGER,
+	curso_id INTEGER,
+	PRIMARY KEY (aluno_id, curso_id),
+	
+	FOREIGN KEY (aluno_id)
+	REFERENCES aluno (id)
+	ON DELETE CASCADE
+	ON UPDATE CASCADE,
+
+	FOREIGN KEY (curso_id)
+	REFERENCES curso (id)
+);
+
+SELECT * FROM aluno_curso;
+
+SELECT aluno.nome AS "Nome do aluno",
+	   curso.nome AS "Nome do curso"
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+	JOIN curso       ON curso.id             = aluno_curso.curso_id;
+
+SELECT * FROM aluno;
+
+UPDATE aluno
+	SET id = 15
+	WHERE id = 2;
