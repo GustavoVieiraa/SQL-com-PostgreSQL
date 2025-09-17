@@ -1,0 +1,19 @@
+Nesta aula, aprendemos como limitar a quantidade de resultados ao realizar uma consulta em um banco de dados, o que é útil quando temos muitos registros na tabela.
+
+Usamos a cláusula LIMIT para limitar o número de resultados retornados. Por exemplo, SELECT * FROM funcionarios LIMIT 5; exibe apenas os cinco primeiros registros da tabela "funcionarios".
+
+Para ordenar os resultados antes de limitar, usamos ORDER BY antes de LIMIT.
+
+A cláusula OFFSET permite pular um número especificado de linhas antes de exibir os resultados. Por exemplo, OFFSET 1 pula a primeira linha e exibe os resultados a partir da segunda linha.
+
+Essas cláusulas ajudam a otimizar as consultas, especialmente em tabelas grandes, controlando a quantidade de dados retornados e a partir de qual ponto os resultados são exibidos.
+
+Comandos SQL utilizados na aula:
+
+SELECT * FROM funcionarios;
+
+SELECT * 
+	FROM funcionarios
+	ORDER BY id
+LIMIT 5
+OFFSET 5;
