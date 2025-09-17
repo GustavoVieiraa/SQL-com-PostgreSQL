@@ -1,0 +1,88 @@
+Nesta aula, aprendemos como ordenar os resultados de uma consulta no PostgreSQL utilizando a cláusula ORDER BY.
+
+Principais pontos abordados:
+
+Ordenação básica:
+  - Utilização de ORDER BY nome_do_campo para ordenar os resultados em ordem crescente (padrão).
+  - Utilização de ORDER BY nome_do_campo DESC para ordenar os resultados em ordem decrescente.
+
+Ordenação por múltiplos campos:
+  - É possível ordenar por mais de um campo, definindo a prioridade na ordem em que os campos são listados (ex: ORDER BY nome, matricula DESC).
+
+Ordenação por posição:
+  - É possível ordenar pelo número da coluna na tabela (ex: ORDER BY 4 para ordenar pelo quarto campo).
+
+Desambiguação de campos:
+  - Quando um campo existe em mais de uma tabela (após um JOIN, por exemplo), é necessário especificar a tabela para evitar ambiguidade (ex: ORDER BY aluno.nome).
+
+Comandos SQL utilizados nessa aula:
+
+DROP TABLE funcionarios;
+DROP TABLE professores;
+
+CREATE TABLE funcionarios (
+	id SERIAL PRIMARY KEY,
+	matricula VARCHAR(10),
+	nome VARCHAR(255),
+	sobrenome VARCHAR(255)
+);
+CREATE TABLE professores (
+	id SERIAL PRIMARY KEY,
+	matricula VARCHAR(10),
+	nome VARCHAR(255),
+	sobrenome VARCHAR(255)
+);
+
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public'
+ORDER BY table_name;
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT001', 'João', 'Silva');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT002', 'Maria', 'Oliveira');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT003', 'Carlos', 'Santos');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT004', 'Ana', 'Souza');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT005', 'Pedro', 'Costa');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT006', 'Juliana', 'Mendes');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT007', 'Lucas', 'Almeida');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT008', 'Fernanda', 'Pereira');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT009', 'Rafael', 'Rodrigues');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT010', 'Camila', 'Barbosa');
+
+INSERT INTO funcionarios (matricula, nome, sobrenome)
+VALUES ('MAT010', 'Camila', 'Soares');
+
+UPDATE funcionarios
+SET matricula = 'MAT011'
+WHERE id = 11;
+
+SELECT * 
+FROM funcionarios
+ORDER BY nome, matricula;
+
+SELECT * 
+FROM funcionarios
+ORDER BY 3, 2;
+
+SELECT *
+FROM funcionarios
+ORDER BY 3 DESC 
