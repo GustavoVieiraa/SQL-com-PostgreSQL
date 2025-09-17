@@ -1,0 +1,28 @@
+Nesta aula, aprendemos sobre as funções de agregação em SQL, que nos permitem integrar vários registros em um único resultado.
+
+Vimos os comandos mais comuns:
+
+COUNT(): Retorna a quantidade de registros.
+SUM(): Retorna a soma dos registros.
+MAX(): Retorna o maior valor dos registros.
+MIN(): Retorna o menor valor dos registros.
+AVG(): Retorna a média dos registros.
+Além disso, aprendemos a usar o comando ROUND() para arredondar os resultados das médias e controlar o número de casas decimais exibidas.
+
+Na prática, utilizamos a tabela "funcionarios" para aplicar essas funções e entender como cada uma delas opera.
+
+Comandos SQL utilizados nessa aula:
+
+-- Funções de Agregações
+-- COUNT - Retorna a quantidade de registros
+-- SUM   - Retorna a soma dos registros
+-- MAX   - Retorna o maior valor dos registros
+-- MIN   - Retorna o menor valor dos registros
+-- AVG   - Retorna a média dos registros
+
+SELECT COUNT(id),
+		SUM(id),
+		MAX(id),
+		MIN(id),
+		ROUND(AVG(id), 2)
+	FROM funcionarios;
