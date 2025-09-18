@@ -1,0 +1,15 @@
+Nesta aula, aprendemos como realizar agrupamentos em consultas SQL utilizando DISTINCT e GROUP BY.
+
+  DISTINCT: Usado para remover valores duplicados de uma coluna específica em um resultado de consulta.
+  GROUP BY: Permite agrupar linhas que têm os mesmos valores em uma ou mais colunas, possibilitando a aplicação de funções de agregação (como COUNT()) para obter informações resumidas sobre cada grupo.
+
+Além disso, vimos como usar o número da posição do campo em GROUP BY e ORDER BY, e como aplicar esses conceitos em um cenário prático com as tabelas "aluno", "curso" e "aluno_curso" para contar o número de alunos em cada curso.
+
+Comandos SQL utilizados na aula:
+
+SELECT
+	nome,
+	COUNT(*)
+FROM funcionarios
+GROUP BY nome
+ORDER BY nome;
