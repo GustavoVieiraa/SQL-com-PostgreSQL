@@ -1,0 +1,9 @@
+Nesta aula, aprendemos a filtrar consultas agrupadas no PostgreSQL.
+
+Primeiro, revisamos as tabelas "aluno", "aluno_curso" e "curso" para entender a estrutura dos dados. Em seguida, exploramos como identificar cursos que não têm alunos matriculados, o que pode ser útil para relatórios ou para decidir se um curso deve ser removido.
+
+Você aprendeu a usar LEFT JOIN para exibir todos os cursos, tanto os que têm alunos matriculados quanto os que não têm. Também vimos como usar a função COUNT() para contar o número de alunos em cada curso e o GROUP BY para agrupar os resultados por nome do curso.
+
+A aula também explicou por que o WHERE não funciona com funções de agrupamento e introduziu o HAVING como uma alternativa para filtrar os resultados com base em funções de agrupamento, como COUNT().
+
+Além disso, vimos exemplos práticos de como usar o HAVING para encontrar cursos sem alunos e funcionários com nomes duplicados.
