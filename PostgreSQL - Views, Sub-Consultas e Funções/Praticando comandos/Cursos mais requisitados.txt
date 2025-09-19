@@ -1,0 +1,18 @@
+Nesta aula, aprendemos a gerar um relatório dos cursos mais requisitados, ou seja, aqueles com mais alunos matriculados.
+
+Começamos selecionando todos os cursos e, em seguida, usamos JOIN para incluir apenas os cursos com alunos matriculados.
+
+A partir daí, organizamos as informações para exibir o nome do curso e o número de alunos matriculados, agrupando os resultados pelo nome do curso e ordenando pelo número de alunos de forma decrescente.
+
+Por fim, limitamos o resultado para exibir apenas o curso mais requisitado.
+
+Além disso, foi proposto um desafio para retornar a categoria mais requisitada, em vez do curso mais requisitado.
+
+Comandos SQL utilizados na aula:
+
+SELECT curso.nome,
+		COUNT(aluno_curso.aluno_id) quantidade_alunos
+	FROM curso
+	JOIN aluno_curso ON aluno_curso.curso_id = curso.id
+GROUP BY curso.nome
+ORDER BY quantidade_alunos DESC; 
