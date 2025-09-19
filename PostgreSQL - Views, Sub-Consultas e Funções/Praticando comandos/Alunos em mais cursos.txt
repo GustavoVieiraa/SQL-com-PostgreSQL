@@ -1,0 +1,27 @@
+Nesta aula, exercitamos a criação de um relatório para identificar os alunos matriculados em mais cursos. Para isso, percorremos os seguintes passos:
+
+Seleção da tabela "aluno": Iniciamos selecionando todos os alunos da tabela "aluno".
+
+Relacionamento com a tabela "aluno_curso": Utilizamos JOIN para relacionar as tabelas "aluno" e "aluno_curso" através do campo "aluno_id".
+
+Junção com a tabela "curso": Adicionamos outro JOIN para incluir informações da tabela "curso" através do campo "curso_id".
+
+Simplificação da consulta: Reduzimos a quantidade de informações desnecessárias, selecionando apenas o primeiro nome, último nome do aluno e a contagem de cursos.
+
+Utilização do GROUP BY: Agrupamos os resultados pelo nome e sobrenome do aluno para que a função de agregação COUNT() funcionasse corretamente.
+
+Ordenação dos resultados: Ordenamos o relatório pelo número de cursos em ordem decrescente para identificar os alunos com mais matrículas.
+
+Otimização da consulta: Removemos a junção desnecessária com a tabela "curso", buscando as informações diretamente em "aluno_curso.curso_id".
+
+Limitação dos resultados: Utilizamos LIMIT 1 para retornar apenas o aluno com o maior número de cursos, caso fosse necessário.
+
+Comandos SQL utilizado na aula:
+
+SELECT aluno.primeiro_nome, 
+	   aluno.ultimo_nome,
+	   COUNT (aluno_curso.curso_id) numero_cursos -- ALIAS é opcional
+	FROM aluno
+	JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id
+GROUP BY aluno.primeiro_nome, aluno.ultimo_nome
+ORDER BY numero_cursos DESC;
