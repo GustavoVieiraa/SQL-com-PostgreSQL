@@ -1,0 +1,18 @@
+Nesta aula, exploramos os relacionamentos em bancos de dados, 
+um conceito conhecido como cardinalidade.
+
+Primeiro, revisamos a importância de referenciar campos únicos ao criar chaves estrangeiras, 
+idealmente as chaves primárias de outras tabelas.
+
+Em seguida, mergulhamos nos tipos de relacionamentos:
+
+1:N (um para muitos): Uma categoria pode estar em muitos cursos, mas um curso só pode ter uma categoria.
+
+N:1 (muitos para um): Muitos cursos podem estar na mesma categoria, mas um curso só pode ter uma categoria.
+
+N:N (muitos para muitos): Um aluno pode estar em vários cursos e um curso pode ter vários alunos. 
+Esse tipo de relação requer uma tabela de junção.
+
+1:1 (um para um): Raro, usado para organizar o banco de dados quando temos muitas 
+informações em uma tabela e precisamos separar os dados em tabelas diferentes para otimizações.
+
