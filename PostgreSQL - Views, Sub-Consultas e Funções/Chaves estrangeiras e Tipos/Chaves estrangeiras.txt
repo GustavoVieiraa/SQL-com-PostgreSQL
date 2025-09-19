@@ -1,0 +1,128 @@
+Nesta aula, exploramos o conceito de chaves estrangeiras e sua importância na manutenção da consistência de um banco de dados.
+
+Principais pontos abordados:
+
+  Revisão de Chaves Estrangeiras:
+    Como criar chaves estrangeiras usando FOREIGN KEY e REFERENCES.
+
+    A função das chaves estrangeiras como restrições que garantem que os valores inseridos em uma tabela referenciem dados existentes em outra tabela.
+
+  Ampliação do Banco de Dados com Categorias:
+    A importância de evitar a redundância e inconsistência de dados ao criar uma tabela de categorias separada.
+
+    Como criar a tabela categoria com os campos id (chave primária) e nome (não nulo).
+
+  Relacionamento entre Cursos e Categorias:
+    Como adicionar o campo categoria_id à tabela curso como uma chave estrangeira referenciando a tabela categoria.
+
+    A necessidade de apagar e recriar a tabela curso para adicionar a chave estrangeira.
+
+Desafio:
+Preencher o banco de dados com alunos, categorias, cursos e matrículas de alunos nos cursos.
+
+Comandos SQL e Desafio praticado na aula:
+
+CREATE TABLE aluno (
+    id SERIAL PRIMARY KEY,
+	primeiro_nome VARCHAR(255) NOT NULL,
+	ultimo_nome VARCHAR(255) NOT NULL,
+	data_nascimento DATE NOT NULL
+);
+
+CREATE TABLE categoria (
+    id SERIAL PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE curso (
+    id SERIAL PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+	categoria_id INTEGER NOT NULL REFERENCES categoria(id)
+);
+
+CREATE TABLE aluno_curso (
+	aluno_id INTEGER NOT NULL REFERENCES aluno(id),
+	curso_id INTEGER NOT NULL REFERENCES curso(id),
+	PRIMARY KEY (aluno_id, curso_id)
+);
+
+-- Categorias
+INSERT INTO categoria (nome) VALUES 
+('Tecnologia'),
+('Negócios'),
+('Artes');
+
+-- Cursos
+INSERT INTO curso (nome, categoria_id) VALUES
+('Desenvolvimento Web', 1),
+('Banco de Dados', 1),
+('Gestão Empresarial', 2),
+('Marketing Digital', 2),
+('Pintura Criativa', 3),
+('Música Instrumental', 3);
+
+-- Alunos
+INSERT INTO aluno (primeiro_nome, ultimo_nome, data_nascimento) VALUES
+('Ana', 'Silva', '2000-03-15'),
+('Bruno', 'Souza', '1999-07-22'),
+('Carla', 'Mendes', '2001-11-10'),
+('Diego', 'Almeida', '1998-05-03'),
+('Eduarda', 'Castro', '2002-09-12'),
+('Felipe', 'Oliveira', '1997-12-25'),
+('Gabriela', 'Pereira', '2000-01-19'),
+('Henrique', 'Lima', '1999-04-30'),
+('Isabela', 'Gomes', '2001-08-08'),
+('João', 'Martins', '2000-06-18'),
+('Karen', 'Barbosa', '2002-02-22'),
+('Lucas', 'Fernandes', '1998-10-05'),
+('Mariana', 'Rodrigues', '1999-12-14'),
+('Nicolas', 'Araújo', '2001-09-29'),
+('Olívia', 'Ribeiro', '2000-07-07'),
+('Paulo', 'Carvalho', '1997-11-11'),
+('Queila', 'Teixeira', '2002-01-25'),
+('Rafael', 'Moraes', '1998-03-09'),
+('Sofia', 'Cardoso', '2000-04-02'),
+('Thiago', 'Pinto', '1999-08-16');
+
+-- Aluno_curso (20 matrículas)
+INSERT INTO aluno_curso (aluno_id, curso_id) VALUES
+(1, 1),
+(2, 1),
+(3, 2),
+(4, 2),
+(5, 3),
+(6, 3),
+(7, 4),
+(8, 4),
+(9, 5),
+(10, 5),
+(11, 6),
+(12, 6),
+(13, 1),
+(14, 2),
+(15, 3),
+(16, 4),
+(17, 5),
+(18, 6),
+(19, 1),
+(20, 2);
+
+SELECT *
+FROM aluno;
+
+SELECT *
+FROM categoria;
+
+SELECT *
+FROM aluno_curso;
+
+SELECT *
+FROM curso 
+INNER JOIN categoria
+ON categoria.id = curso.categoria_id;
+
+SELECT *
+FROM aluno_curso
+INNER JOIN aluno ON aluno.id = aluno_curso.aluno_id
+INNER JOIN curso ON curso.id = aluno_curso.curso_id
+INNER JOIN categoria ON categoria.id = curso.categoria_id;
