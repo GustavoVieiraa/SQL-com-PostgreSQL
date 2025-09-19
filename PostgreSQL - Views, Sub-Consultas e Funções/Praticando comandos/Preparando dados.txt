@@ -1,0 +1,25 @@
+Nesta aula, revisamos as diferentes sintaxes de INSERT INTO para inserir dados em tabelas do PostgreSQL, incluindo a inserção de múltiplas linhas em uma única instrução e a inserção de dados com chaves estrangeiras.
+
+Também abordamos a sintaxe do UPDATE para modificar dados existentes, com ênfase na importância de usar a cláusula WHERE para evitar atualizações acidentais em todos os registros.
+
+Além disso, discutimos como atualizar um campo que não tem um relacionamento direto com outras tabelas é mais simples e não requer configurações adicionais como CASCADE.
+
+Por fim, mencionamos brevemente a exclusão de dados com DELETE e a necessidade de remover quaisquer registros relacionados antes de excluir uma categoria para evitar erros devido a restrições de chave estrangeira.
+
+Comandos SQL utilizados na aula:
+
+INSERT INTO aluno (primeiro_nome, ultimo_nome, data_nascimento) VALUES (
+	'Vinicius', 'Dias', '1997-10-15'
+), (
+	'Patricia', 'Freitas', '1986-10-25'
+), (
+	'Diogo', 'Oliveira', '1984-08-27'
+), (
+	'Maria', 'Rosa', '1985-01-01'
+);
+
+SELECT * 
+FROM categoria;
+
+SELECT * 
+FROM curso;
