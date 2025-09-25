@@ -1,0 +1,30 @@
+Nesta aula, exploramos as funções de data no PostgreSQL.
+
+Cálculo da Idade:
+  
+  Inicialmente, calculamos a idade subtraindo a data de nascimento da data atual (NOW()::DATE - data_nascimento) e dividindo por 365 para obter uma aproximação em anos.
+  
+  Em seguida, aprendemos uma maneira mais fácil e precisa de calcular a idade usando a função AGE(data_nascimento), que retorna a idade em anos, meses e dias.
+
+Extraindo Informações Específicas da Data:
+  Para extrair apenas o ano da idade calculada, utilizamos a função EXTRACT(YEAR FROM AGE(data_nascimento)).
+
+Outras Funções e Operadores de Data:
+  
+  Foi mencionado que existem muitas outras funções e operadores para manipular datas no PostgreSQL, incluindo somar, subtrair, multiplicar e dividir datas, intervalos, timestamps e horários.
+
+  Funções como date_part() (similar a EXTRACT()) também foram citadas como úteis para extrair partes específicas de uma data.
+
+Documentação do PostgreSQL:
+  
+  A importância de consultar a documentação do PostgreSQL para explorar todas as funções e operadores disponíveis para trabalhar com data e hora foi enfatizada.
+
+Comandos SQL utilizados na aula:
+
+SELECT (primeiro_nome || ' ' || ultimo_nome) AS nome_completo, 
+	 AGE(data_nascimento) AS idade
+FROM aluno;
+
+SELECT (primeiro_nome || ' ' || ultimo_nome) AS nome_completo, 
+	 EXTRACT(YEAR FROM AGE(data_nascimento)) AS idade
+FROM aluno;
