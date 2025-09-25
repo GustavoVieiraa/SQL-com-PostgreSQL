@@ -1,0 +1,21 @@
+Nesta aula, aprendemos sobre subqueries, que são queries aninhadas utilizadas para filtrar resultados de outras queries.
+
+Foi demonstrado como usar o resultado de uma query (que busca categorias sem espaços no nome) como filtro para outra query (que busca cursos nessas categorias).
+
+Além disso, exploramos como as subqueries podem ser usadas para buscar cursos em categorias que contenham a palavra "de" no nome.
+
+Em resumo, as subqueries permitem alcançar resultados mais específicos ao combinar o poder de múltiplas queries em uma única instrução.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+FROM categoria
+WHERE nome NOT LIKE '%ó%';
+
+SELECT *
+FROM curso
+LEFT JOIN categoria c
+ON curso.categoria_id = c.id
+WHERE categoria_id IN (
+ 	SELECT id FROM categoria WHERE nome NOT LIKE '%Tecnologia%'
+);
