@@ -1,0 +1,18 @@
+Nesta aula, aprendemos sobre como utilizar o resultado de uma consulta (uma subquery) como se fosse uma tabela dentro de outra consulta.
+
+Você pode colocar uma subquery dentro da cláusula FROM de um SELECT, permitindo que você manipule o resultado dessa subquery como se fosse uma tabela. Isso é útil quando você precisa filtrar ou transformar os dados resultantes da subquery antes de usá-los na consulta principal.
+
+No entanto, na maioria dos casos, é possível obter o mesmo resultado utilizando outras cláusulas, como JOIN ou HAVING, tornando o código mais simples e legível. A decisão de usar uma subquery no FROM depende da situação específica e da complexidade da consulta.
+
+Comandos SQL utilizados na aula:
+
+SELECT categoria,
+	numero_cursos
+	FROM (
+			SELECT categoria.nome AS categoria,
+				COUNT (curso.id) AS numero_cursos
+			FROM categoria
+			JOIN curso ON curso.categoria_id = categoria.id
+			GROUP BY categoria
+	) AS categoria_cursos
+	WHERE numero_cursos >= 2;
