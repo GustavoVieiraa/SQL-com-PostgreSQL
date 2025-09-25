@@ -1,0 +1,5 @@
+Nesta aula, exploramos as funções matemáticas do PostgreSQL, desde operadores básicos como +, -, *, / e %, até operações mais avançadas como potência (^), raiz quadrada (|/) e fatorial (!).
+
+Também vimos funções como abs(x) para valor absoluto, cbrt(dp) para raiz cúbica, ceil(dp or numeric) e floor(dp or numeric) para arredondamento, degrees(dp) para converter graus em radianos e div(y numeric, x numeric) para quociente inteiro.
+
+Além disso, aprendemos como usar a função pi() para obter o valor de π e como o PostgreSQL oferece funções para cálculos trigonométricos e geográficos, tornando-o uma ferramenta poderosa para diversas aplicações.
