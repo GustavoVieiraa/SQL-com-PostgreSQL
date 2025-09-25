@@ -1,0 +1,15 @@
+Nesta aula, aprendemos sobre a conversão de tipos de dados no PostgreSQL, com foco na formatação de datas e números para strings.
+
+Você pode usar o operador :: para conversões simples, como transformar um timestamp em date. Para formatações mais complexas, como exibir datas no formato brasileiro (dia/mês/ano) ou formatar números com casas decimais específicas, usamos a função TO_CHAR().
+
+A função TO_CHAR() permite converter vários tipos de dados (timestamp, intervalo, números, etc.) em texto formatado. Os formatos de conversão são especificados dentro de aspas simples ('). A documentação do PostgreSQL oferece uma lista completa de formatos disponíveis para TO_CHAR().
+
+Além disso, vimos exemplos de como formatar a saída de um número real, controlando o número de casas decimais exibidas.
+
+Comandos SQL utilizados na aula:
+
+SELECT NOW();
+
+SELECT NOW()::DATE;
+
+SELECT TO_CHAR(NOW(), 'dd/MM/yyyy') AS data_atual;
