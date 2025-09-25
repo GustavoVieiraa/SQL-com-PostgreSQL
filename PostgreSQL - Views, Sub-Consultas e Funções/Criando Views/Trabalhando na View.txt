@@ -1,0 +1,18 @@
+Nesta aula, exploramos o uso de views no PostgreSQL para facilitar a manipulação e o acesso aos dados.
+
+Aprendemos que podemos aplicar filtros diretamente em uma view, assim como faríamos em uma tabela, e também realizar operações de JOIN entre views e tabelas para combinar informações relevantes.
+
+Foi demonstrado como adicionar um alias (AS) para personalizar o nome de uma coluna em uma consulta que envolve uma view.
+
+Além disso, discutimos a importância de considerar o impacto na performance ao utilizar views, já que o PostgreSQL precisa executar a query da view a cada acesso, o que pode ser menos eficiente do que consultar diretamente as tabelas, especialmente em relatórios complexos.
+
+Por fim, vimos que as views podem ser utilizadas para controlar o acesso aos dados, permitindo que um cliente externo visualize apenas as views específicas, em vez de ter acesso direto às tabelas do banco de dados, o que contribui para a segurança das informações.
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+FROM vw_cursos_tecnologia WHERE nome_curso = 'Banco de Dados';
+
+SELECT vw_cursos_tecnologia.*, categoria.id AS categoria_id
+FROM vw_cursos_tecnologia
+LEFT JOIN categoria ON categoria.nome = vw_cursos_tecnologia.nome_categoria; 
