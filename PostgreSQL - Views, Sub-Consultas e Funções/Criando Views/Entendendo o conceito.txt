@@ -1,0 +1,22 @@
+Nesta aula, aprendemos sobre o conceito de "visão" (view) em SQL, 
+que é basicamente nomear consultas para criar tabelas virtuais.
+
+Principais pontos abordados:
+
+O que é uma view: Uma tabela virtual criada a partir de uma consulta SQL, 
+que não existe fisicamente no banco de dados.
+
+Vantagens:
+  Melhora a legibilidade de relatórios complexos, pois permite reutilizar consultas nomeadas.
+
+  Aumenta a segurança ao fornecer acesso a terceiros, pois permite conceder acesso apenas a 
+  visualizações específicas, sem permitir a manipulação dos dados.
+
+Desvantagens:
+  Pode levar a perda de performance em alguns casos, pois o filtro em uma view pode não ser 
+  tão otimizado quanto em uma consulta direta.
+
+Quando usar: É importante entender como, quando e para que utilizar as views, 
+garantindo que não haja problemas de desempenho no banco de dados.
+
+Em resumo, as views são uma ferramenta poderosa para organizar e proteger seus dados, mas é preciso usá-las com cuidado para não comprometer o desempenho do banco de dados.
