@@ -1,0 +1,13 @@
+Nesta aula, aprendemos sobre o operador IN em SQL, que permite buscar valores que correspondam a uma lista de opções especificadas.
+
+Você pode usá-lo como alternativa ao OR para verificar se um campo corresponde a um entre múltiplos valores. Por exemplo, para encontrar todos os cursos que são da categoria "Front-End" (ID 1) ou "Programação" (ID 2), você pode usar:
+
+SELECT * FROM curso WHERE categoria_id IN (1,2);
+
+O operador IN simplifica a consulta, especialmente quando você tem muitos valores para verificar. Se o IN tiver apenas um item, como IN(3), ele se comporta da mesma forma que uma comparação direta com o operador de igualdade (=).
+
+Comandos SQL utilizados na aula:
+
+SELECT *
+FROM curso
+WHERE curso.categoria_id IN (1, 2);
