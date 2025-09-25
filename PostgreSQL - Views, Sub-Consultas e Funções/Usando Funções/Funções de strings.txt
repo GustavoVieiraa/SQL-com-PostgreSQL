@@ -1,0 +1,27 @@
+Nesta aula, exploramos as funções de string no PostgreSQL, que são específicas desse banco de dados e o diferenciam de outros.
+
+Aprendemos que, ao contrário das cláusulas SQL gerais como SELECT, DISTINCT e JOIN, as funções variam entre os bancos de dados, especialmente aquelas para manipular números e datas.
+
+Foi demonstrado o uso do operador || para concatenar strings, e como lidar com valores NULL nessa operação utilizando a função CONCAT, que ignora valores nulos.
+
+Além disso, vimos como usar a documentação do PostgreSQL para descobrir uma variedade de funções de string, como bit_length, char_length e UPPER.
+
+Por fim, aprendemos a combinar funções, como CONCAT e UPPER, e a usar TRIM para remover espaços extras de uma string.
+
+Comandos SQL utilizados na aula:
+
+SELECT 
+	(primeiro_nome || ' ' || ultimo_nome) AS nome_completo
+FROM aluno;
+
+SELECT 'Felipe' || ' ' || 'Oliveira';
+
+SELECT 'Felipe' || ' ' || NULL;
+
+SELECT CONCAT('Felipe', '', NULL);
+
+SELECT CONCAT('Felipe', NULL, 'Oliveira');
+
+SELECT UPPER(CONCAT('Felipe', ' ', 'Oliveira'));
+
+SELECT TRIM(UPPER(CONCAT('Felipe', ' ', 'Oliveira') || ' '));
